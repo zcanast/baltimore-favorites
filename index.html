@@ -1,0 +1,107 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Baltimore</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+     integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+     crossorigin=""/>
+     <link rel="stylesheet" href="../style.css" />
+     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.1/d3.min.js"
+     integrity="sha512-EJphfO0pq9xyT3qaHte1zam2S9a1PZ76oHBjayziMT+2lw/Y0NhkSVHS2rfl3t4UX/eyq/D6f9d2sjA6K9t/Kg==" 
+     crossorigin="anonymous" 
+     referrerpolicy="no-referrer"></script>
+     <script src="https://cdn.skypack.dev/d3-fetch@3"></script>
+     <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+     integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+     crossorigin=""></script>
+  </head>
+  <body>
+    <div class="wrapper"> 
+      <header class="header"><h1>My Favorite Things To Do in Baltimore</h1></header>
+      
+      <nav class="nav-bar">
+        <!-- nav bar items -->
+        <ul class="nav-list">
+          <li class="list-item">
+              <a href="../index.html">Home</a>
+          </li>
+          <li class="list-item">
+              <a href="../baltimore">Baltimore</a>
+          </li>
+          <li class="list-item">
+              <a href="../crime">Crime</a>
+          </li>
+          <li class="list-item">
+              <a href="../tetris">Tetris</a>
+          </li>
+          <li class="list-item">
+            <a href="../music-carousel/">Music</a>
+          </li>
+          <li class="list-item">
+              <a href="../spotify/index.html">Spotify</a>
+          </li>
+          <li class="list-item">
+            <a href="../photography/">Photography</a>
+          </li>
+          <li class="list-item">
+            <a href="../vlog/index.html">Video Editing</a>
+          </li>
+          <li class="list-item">
+              <a href="../about/index.html">About</a>
+          </li>
+      </ul>
+      </nav>
+
+      <div class="container">
+
+          <div class="left_section box">
+            <!-- <h3 class="title">Explore Crime Incidents by Type</h3>
+              <p class="text">
+                Use the button below to map and load a list of 30 things to do in Baltimore, MD. 
+                Type in the search bar to filter the activities by name or category.
+              </p> -->
+
+              <form action="/api" class="box main_form">
+                  <div>
+                      <label for="resto">Filter List</label>
+                      <input type="text" name="resto" id="resto"/>
+                  </div>
+                <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+                <button type="submit" id="get-resto">Generate Ideas</button>
+              </form>
+
+              <div class="box" id="things_list">
+                <!-- <p class="text"> -->
+                  A list of things to do in Baltimore County and City.
+                <!-- </p> -->
+              </div>
+          </div>
+
+
+        <div class="row">
+
+          <div class="right_section box">
+            <h3>Map</h3>
+            <div id="map"></div>
+          </div>
+
+          <div class="right_section box">
+            <h3>Distribution of Local Activities By Category</h3>
+            <div class="box chart_container"> 
+              <canvas id="myChart"></canvas>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+    <footer class="footer">
+      <a href="https://github.com/zcanast/" target="_blank" rel="noopener noreferrer">Zoey Anastasiadis</a>
+   </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
