@@ -105,8 +105,9 @@ function filterList(list, filterInputValue) {
     if (!item.Category || !item.Thing) { return; }
     const lowerCaseName1 = item.Thing.toLowerCase();
     const lowerCaseName2 = item.Category.toLowerCase();
+    const lowerCaseName3 = item.Location.toLowerCase();
     const lowerCaseQuery = filterInputValue.toLowerCase();
-    return lowerCaseName1.includes(lowerCaseQuery) || lowerCaseName2.includes(lowerCaseQuery);
+    return lowerCaseName1.includes(lowerCaseQuery) || lowerCaseName2.includes(lowerCaseQuery) || lowerCaseName3.includes(lowerCaseQuery);
   });
 }
 
